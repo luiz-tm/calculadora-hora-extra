@@ -18,3 +18,7 @@ console.log(`O valor a receber é de: R$ ${getValorHoraExtra(getHoraExtra(horari
     .toLocaleString()
     .replace('.', ',')}
 `)
+
+export default function convertTimestamp() {
+    return 
+}

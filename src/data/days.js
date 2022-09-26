@@ -1,0 +1,1 @@
+export default JSON.parse(localStorage.getItem('days')) ? JSON.parse(localStorage.getItem('days')) : []

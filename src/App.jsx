@@ -6,8 +6,7 @@ import Resultado from "./components/Resultado/Resultado"
 import './App.css'
 
 function App() {
-
-  
+  const dias = []
 
   return (
     <div>

@@ -1,0 +1,68 @@
+.DialogOverlay {
+    background-color: rgba(0, 0, 0, 0.514);
+    inset: 0;
+    position: fixed;
+}
+
+.DialogContent {
+    position: fixed;
+    background-color: #2A2634;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 8px;
+    text-align: left;
+}
+
+.DialogContent p {
+    margin-bottom: 6px;
+}
+
+.DialogContent form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.DialogContent > form > .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.DialogContent > form > .buttons > .DialogClose, .DialogContent > form > .buttons > button {
+    width: 100px;
+    border: none;
+    font-weight: 600;
+    padding: 6px 0px;
+    border-radius: 8px;
+}
+
+.DialogContent > form > .buttons > .DialogClose {
+    background-color: #dbdbdb;
+    color: black;
+}
+
+.DialogContent > form > .buttons > button {
+    background-color: #715ac1;
+    color: white;
+}
+
+.DialogContent form input {
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 12px;
+    background-color: #1e1b25;
+    color: white;
+    border-radius: 8px 0px 8px 0px;
+}
+
+.DialogTitle {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1e1b25;
+}

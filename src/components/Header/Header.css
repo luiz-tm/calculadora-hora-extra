@@ -1,0 +1,24 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px;
+    background-color: #715ac1;
+    color: white;
+}
+
+.Header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Header a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.Header a:hover {
+    text-decoration: underline;
+}

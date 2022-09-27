@@ -19,7 +19,7 @@ export default function Table() {
     }
 
     return (
-        <table className="table mt-4">
+        <table className="table mt-4 overflow-auto">
             <tbody>
                 <tr className="thead">
                     <td>Dia</td>

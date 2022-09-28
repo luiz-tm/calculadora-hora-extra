@@ -4,6 +4,7 @@ import { useState } from 'react'
 import days from '../../data/days'
 
 export default function Button(props) {
+    const { nome, valorDiaria} = props;
 
     const [func, setFunc] = useState('')
     const [diaria, setDiaria] = useState('')
@@ -24,7 +25,6 @@ export default function Button(props) {
     }
 
     const saveDay = (e) => {
-        const { nome, valorDiaria} = props;
 
         if (!nome && !valorDiaria) 
             return alert('Você precisa cadastrar o funcionário primeiro')
@@ -79,7 +79,7 @@ export default function Button(props) {
             </Dialog.Root>
             
             <Dialog.Root>
-                <div><Dialog.Trigger className="btn btn-primary">Adicione um dia</Dialog.Trigger></div>
+                <div>{nome && valorDiaria ? <Dialog.Trigger className="btn btn-primary">Adicione um dia</Dialog.Trigger> : ''}</div>
                 <Dialog.Portal>
                     <Dialog.Overlay className="DialogOverlay">
                         <Dialog.Content className="DialogContent">

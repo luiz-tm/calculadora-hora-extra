@@ -57,11 +57,11 @@ export default function Button(props) {
         <div className="d-flex row gap-4 mt-4">
 
             <Dialog.Root>
-                <div><Dialog.Trigger className="btn btn-success">Adicione o funcionário</Dialog.Trigger></div>
+                <div><Dialog.Trigger className="btn btn-success">{`${funcDefined ? 'Edite' : 'Adicione'} o funcionário`}</Dialog.Trigger></div>
                 <Dialog.Portal>
                     <Dialog.Overlay className="DialogOverlay">
                         <Dialog.Content className="DialogContent">
-                            <Dialog.Title className="mb-4 DialogTitle">Adicione o funcionário</Dialog.Title>
+                            <Dialog.Title className="mb-4 DialogTitle">{`${funcDefined ? 'Edite' : 'Adicione'} o funcionário`}</Dialog.Title>
                             <form action="/" onSubmit={saveUser}>
                                 <input value={func} onChange={(e) => {
                                     setFunc(e.target.value)

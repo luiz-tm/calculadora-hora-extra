@@ -5,7 +5,7 @@ import days from '../../data/days'
 
 export default function Button() {
 
-    const [func, setFunc] = useState() 
+    const [func, setFunc] = useState()
     const [diaria, setDiaria] = useState()
 
     const [day, setDay] = useState()
@@ -14,28 +14,41 @@ export default function Button() {
     const [exitTime, setExitTime] = useState()
 
     const saveUser = () => {
-        localStorage.setItem('funcionario', func);
-        localStorage.setItem('diaria', diaria);
-        alert('Funcionário salvo com sucesso!')
+        try {
+            localStorage.setItem('funcionario', func);
+            localStorage.setItem('diaria', diaria);
+            alert('Funcionário salvo com sucesso!')
+        } catch(e) {
+            alert('Houve um erro com o salvamento do funcionário.')
+        }
     }
 
     const saveDay = (e) => {
+        const nome = localStorage.getItem('funcionario')
+        const diaria = localStorage.getItem('diaria')
 
-        days.push({
-            day,
-            hours,
-            entryTime,
-            exitTime
-        })
+        if (!nome && !diaria) 
+            return alert('Você precisa cadastrar o funcionário primeiro')
 
-        localStorage.setItem('days', JSON.stringify(days))
-
-        alert('Dia salvo com sucesso!')
+        try {
+            days.push({
+                day,
+                hours,
+                entryTime,
+                exitTime
+            })
+    
+            localStorage.setItem('days', JSON.stringify(days))
+    
+            alert('Dia salvo com sucesso!')
+        } catch(e) {
+            alert('Houve um erro com o salvamento do dia.')
+        }
 
     }
 
     return (
-        
+
         <div className="d-flex row gap-4 mt-4">
 
             <Dialog.Root>
@@ -44,7 +57,6 @@ export default function Button() {
                     <Dialog.Overlay className="DialogOverlay">
                         <Dialog.Content className="DialogContent">
                             <Dialog.Title className="mb-4 DialogTitle">Adicione o funcionário</Dialog.Title>
-                            <p>Digite o nome do funcionário abaixo</p>
                             <form action="/" onSubmit={saveUser}>
                                 <input value={func} onChange={(e) => {
                                     setFunc(e.target.value)

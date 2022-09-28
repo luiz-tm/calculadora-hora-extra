@@ -1,22 +1,9 @@
 import './Table.css'
 import days from '../../data/days'
+import getHoraExtra from '../../utils/getHoraExtra';
+import getValorHoraExtra from '../../utils/getValorHoraExtra';
 
 export default function Table() {
-    const getHoraExtra = (day) => {
-        const entryTime = day.entryTime;
-        const exitTime = day.exitTime;
-        const hours = day.hours;
-
-        const timestampEntryTime = new Date(`${day.day}T${entryTime}:00`).getTime()
-        const timestampExitTime = new Date(`${day.day}T${exitTime}:00`).getTime()
-
-        return (((timestampExitTime-timestampEntryTime) / 1000 / 60 / 60) - hours)   
-    }
-
-    const getValorHoraExtra = (day) => {
-        const diaria = Number(localStorage.getItem('diaria'))
-        return getHoraExtra(day) * ( diaria / day.hours )
-    }
 
     return (
         <table className="table mt-4 overflow-auto">

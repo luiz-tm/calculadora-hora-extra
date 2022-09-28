@@ -1,9 +1,9 @@
 import './Table.css'
-import days from '../../data/days'
 import getHoraExtra from '../../utils/getHoraExtra';
 import getValorHoraExtra from '../../utils/getValorHoraExtra';
 
-export default function Table() {
+export default function Table(props) {
+    const { day } = props;
 
     return (
         <table className="table mt-4 overflow-auto">
@@ -17,15 +17,15 @@ export default function Table() {
                     <td>Valor</td>
                 </tr>
                 {
-                days.map((day) => {
+                day.map((dayObject) => {
                     return (
-                        <tr key={day.day}>
-                            <td>{day.day}</td>
-                            <td>{day.hours}h</td>
-                            <td>{day.entryTime}</td>
-                            <td>{day.exitTime}</td>
-                            <td>{getHoraExtra(day).toFixed(2)}</td>
-                            <td>R$ {getValorHoraExtra(day).toFixed(2)}</td>
+                        <tr key={dayObject.day}>
+                            <td>{dayObject.day.split('-').reverse().join('/')}</td>
+                            <td>{dayObject.hours}h</td>
+                            <td>{dayObject.entryTime}</td>
+                            <td>{dayObject.exitTime}</td>
+                            <td>{getHoraExtra(dayObject).toFixed(2)}</td>
+                            <td>R$ {getValorHoraExtra(dayObject).toFixed(2)}</td>
                         </tr>
                     )
                 })

@@ -3,10 +3,10 @@ import './Button.css'
 import { useState } from 'react'
 import days from '../../data/days'
 
-export default function Button() {
+export default function Button(props) {
 
-    const [func, setFunc] = useState()
-    const [diaria, setDiaria] = useState()
+    const [func, setFunc] = useState('')
+    const [diaria, setDiaria] = useState('')
 
     const [day, setDay] = useState()
     const [hours, setHours] = useState()
@@ -24,10 +24,9 @@ export default function Button() {
     }
 
     const saveDay = (e) => {
-        const nome = localStorage.getItem('funcionario')
-        const diaria = localStorage.getItem('diaria')
+        const { nome, valorDiaria} = props;
 
-        if (!nome && !diaria) 
+        if (!nome && !valorDiaria) 
             return alert('Você precisa cadastrar o funcionário primeiro')
 
         try {
@@ -48,7 +47,6 @@ export default function Button() {
     }
 
     return (
-
         <div className="d-flex row gap-4 mt-4">
 
             <Dialog.Root>
@@ -73,8 +71,7 @@ export default function Button() {
                     </Dialog.Overlay>
                 </Dialog.Portal>
             </Dialog.Root>
-
-
+            
             <Dialog.Root>
                 <div><Dialog.Trigger className="btn btn-primary">Adicione um dia</Dialog.Trigger></div>
                 <Dialog.Portal>

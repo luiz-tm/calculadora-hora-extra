@@ -1,9 +1,8 @@
 import getFullValue from "../../utils/getFullValue"
 import getFullHours from "../../utils/getFullHours"
 
-export default function Resultado() {
-    const nome = localStorage.getItem('funcionario')
-    const diaria = localStorage.getItem('diaria')
+export default function Resultado(props) {
+    const { nome, diaria } = props;
 
     if(!nome && !diaria) {
         return (

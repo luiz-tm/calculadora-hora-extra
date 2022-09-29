@@ -63,12 +63,22 @@ export default function Button(props) {
                         <Dialog.Content className="DialogContent">
                             <Dialog.Title className="mb-4 DialogTitle">{`${funcDefined ? 'Edite' : 'Adicione'} o funcionário`}</Dialog.Title>
                             <form action="/" onSubmit={saveUser}>
-                                <input value={func} onChange={(e) => {
-                                    setFunc(e.target.value)
-                                }} placeholder="Digite o nome do funcionário" autoComplete="off" type="text" />
-                                <input value={diaria} onChange={(e) => {
-                                    setDiaria(+e.target.value)
-                                }} placeholder="Digite a diária do funcionário" autoComplete="off" type="number" />
+                                <input 
+                                    value={func} 
+                                    onChange={e => setFunc(e.target.value)} 
+                                    placeholder="Digite o nome do funcionário" 
+                                    autoComplete="off" 
+                                    type="text" 
+                                />
+
+                                <input 
+                                    value={diaria} 
+                                    onChange={e => setDiaria(+e.target.value)} 
+                                    placeholder="Digite a diária do funcionário" 
+                                    autoComplete="off" 
+                                    type="number" 
+                                />
+
                                 <div className="buttons mt-4">
                                     <Dialog.Close className="DialogClose">Cancelar</Dialog.Close>
                                     <button>Salvar</button>
@@ -89,24 +99,36 @@ export default function Button(props) {
                                 <p>Complete as informações para adicionar um dia</p>
 
                                 <p>Selecione o dia</p>
-                                <input onChange={(e) => {
-                                    setDay(e.target.value)
-                                }} placeholder="Dia" autoComplete="off" type="date" />
+                                <input 
+                                    onChange={e => setDay(e.target.value)} 
+                                    placeholder="Dia" 
+                                    autoComplete="off" 
+                                    type="date" 
+                                />
 
                                 <p>Quantas horas o funcionário trabalha por dia?</p>
-                                <input onChange={(e) => {
-                                    setHours(+e.target.value)
-                                }} placeholder="Horas" autoComplete="off" type="number" />
+                                <input 
+                                    onChange={e => setHours(+e.target.value)}
+                                    placeholder="Horas" 
+                                    autoComplete="off" 
+                                    type="number" 
+                                />
 
                                 <p>Horário de entrada</p>
-                                <input onChange={(e) => {
-                                    setEntryTime(e.target.value)
-                                }} placeholder="Horas" autoComplete="off" type="time" />
+                                <input 
+                                    onChange={e => setEntryTime(e.target.value)} 
+                                    placeholder="Horas" 
+                                    autoComplete="off" 
+                                    type="time" 
+                                />
 
                                 <p>Horário de saída</p>
-                                <input onChange={(e) => {
-                                    setExitTime(e.target.value)
-                                }} placeholder="Horas" autoComplete="off" type="time" />
+                                <input 
+                                    onChange={e => setExitTime(e.target.value)} 
+                                    placeholder="Horas" 
+                                    autoComplete="off" 
+                                    type="time" 
+                                />
 
                                 <div className="buttons mt-4">
                                     <Dialog.Close className="DialogClose">Cancelar</Dialog.Close>

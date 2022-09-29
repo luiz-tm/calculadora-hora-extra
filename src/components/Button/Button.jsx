@@ -46,9 +46,9 @@ export default function Button(props) {
     
             localStorage.setItem('days', JSON.stringify(days))
     
-            alert('Dia salvo com sucesso!')
+            alert('Salvo com sucesso!')
         } catch(e) {
-            alert('Houve um erro com o salvamento do dia.')
+            alert('Houve um erro com o salvamento.')
         }
 
     }

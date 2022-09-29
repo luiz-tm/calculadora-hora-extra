@@ -68,7 +68,7 @@ export default function Button(props) {
                                 }} placeholder="Digite o nome do funcionário" autoComplete="off" type="text" />
                                 <input value={diaria} onChange={(e) => {
                                     setDiaria(+e.target.value)
-                                }} placeholder="Digite a diária do funcionário" autoComplete="off" type="text" />
+                                }} placeholder="Digite a diária do funcionário" autoComplete="off" type="number" />
                                 <div className="buttons mt-4">
                                     <Dialog.Close className="DialogClose">Cancelar</Dialog.Close>
                                     <button>Salvar</button>

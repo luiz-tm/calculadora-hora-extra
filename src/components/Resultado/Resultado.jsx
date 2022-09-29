@@ -3,8 +3,9 @@ import getFullHours from "../../utils/getFullHours"
 
 export default function Resultado(props) {
     const { nome, diaria } = props;
+    const funcDefined = nome && diaria;
 
-    if(!nome && !diaria) {
+    if(!funcDefined) {
         return (
             <h2>Inicie adicionando um funcionário</h2>
         )

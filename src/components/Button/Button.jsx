@@ -33,9 +33,6 @@ export default function Button(props) {
         try {
             const timestampEntryTime = new Date(`${day}T${entryTime}:00`).getTime()
             const timestampExitTime = new Date(`${day}T${exitTime}:00`).getTime()
-            
-            if(timestampExitTime-timestampEntryTime <= 0)
-                return alert('As horas não podem ser iguais ou a hora de saída não pode ser antes da hora de chegada.')
 
             days.push({
                 day,

@@ -38,7 +38,7 @@ export default function Button(props) {
                 day,
                 hours,
                 entryTime,
-                exitTime
+                exitTime,
             })
     
             localStorage.setItem('days', JSON.stringify(days))

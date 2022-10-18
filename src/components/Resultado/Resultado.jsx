@@ -1,5 +1,6 @@
 import getFullValue from "../../utils/getFullValue"
 import getFullHours from "../../utils/getFullHours"
+import days from "../../data/days";
 
 export default function Resultado(props) {
     const { nome, diaria } = props;
